@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script type="text/javascript" src="extractor.js"></script>
+    <script type="text/javascript" src="source/exif.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="container">
+      <img src="img/IMG_6173.jpg" id="image" />
+    </div>
+    <script>
+      document.getElementById("image").onclick = function() {
+        EXIF.getData(this, function() {
+          alert(EXIF.pretty(this));
+        });
+      }
+    </script>
+  </body>
