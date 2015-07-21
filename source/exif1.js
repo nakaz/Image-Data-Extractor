@@ -753,6 +753,11 @@
         return true;
     }
 
+    EXIF.getIPTC = function(img, tag){
+      if (!imageHasData(img)) return;
+      return img.iptcdata[tag];
+    }
+
     EXIF.getTag = function(img, tag) {
         if (!imageHasData(img)) return;
         return img.exifdata[tag];
