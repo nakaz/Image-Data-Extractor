@@ -14,19 +14,24 @@ window.onload = function(){
   function playerSchool (arr){
     console.log(arr);
 
+    var school, number;
+
     var schoolCode = arr.filter(function(s){
       return /^[a-zA-Z]+\d+$/.test(s);
     });
 
     schoolCode.forEach(function(el){
-      var school = el.match('[a-zA-Z]+')[0].toUpperCase();
-      var number = el.match('[0-9]+')[0];
+      school = el.match('[a-zA-Z]+')[0].toUpperCase();
+      number = el.match('[0-9]+')[0];
 
+      // Validation for Pac5
       if (school === "P"){
         school = el.substring(0,2);
         number = el.substring(2);
       }
-      console.log(school, number);
+
+      console.log(schools[school], number);
+
     });
   }
 };
